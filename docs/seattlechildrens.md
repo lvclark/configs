@@ -56,11 +56,12 @@ mamba activate nextflow
 # To list all the accounts you are authorized on HPC. For example if you have an account cpu-mylab-sponsored, your association is "mylab".
 sshare -o "Account,Partition%20"
 
-# example to run nextflow pipeline (please replace with your own association and module)
+# example to run nextflow pipeline (please replace with your own association, module, and temp directory)
 nextflow run -c 'conf/seattlechildrens.config' \
     [nf-core/module_name] \
     -profile sasquatch \
     --assoc ["your_association_name"] \
+    -workDir /data/hps/assoc/private/mylab/user/mmouse/temp_rnaseq \
 ```
 
 You can find more information about computational resources [here](https:#child.seattlechildrens.org/research/center_support_services/research_informatics/research_scientific_computing/high_performance_computing_core/). You have to be an employee of SCRI to access the link.
